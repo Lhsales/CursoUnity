@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 vel;
+    float velocidade = 2;
 
     public Transform floorCollider;
     public Transform skin;
@@ -27,15 +28,18 @@ public class PlayerController : MonoBehaviour
         bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
         if (Input.GetButtonDown("Jump") && canJump)
         {
-            animator.Play("PlayerJump");
+            animator.Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, 150));
         }
 
-        vel = new Vector2(horizontal, rb.velocity.y);
+        vel = new Vector2(horizontal * velocidade, rb.velocity.y);
 
         if (horizontal != 0)
+        {
+            skin.localScale = new Vector3(horizontal, 1, 1);
             animator.SetBool("PlayerRun", true);
+        }
         else
             animator.SetBool("PlayerRun", false);
         
