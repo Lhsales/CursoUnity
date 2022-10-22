@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     float velocidade = 2;
 
     int numeroCombo;
-    float tempoCombo;
+    public float tempoCombo;
 
     public Transform floorCollider;
     public Transform skin;
@@ -28,6 +28,22 @@ public class PlayerController : MonoBehaviour
         var animator = skin.GetComponent<Animator>();
         var horizontal = Input.GetAxisRaw("Horizontal");
 
+        tempoCombo = tempoCombo + Time.deltaTime;
+
+        if (Input.GetButtonDown("Fire1") && tempoCombo > 0.5f)
+        {
+            numeroCombo++;
+            if (numeroCombo > 2)
+                numeroCombo = 1;
+
+            tempoCombo = 0;
+            animator.Play("PlayerAttack" + numeroCombo, -1);
+
+        }
+        if (tempoCombo >= 1)
+            numeroCombo = 0;
+
+
         bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
         if (Input.GetButtonDown("Jump") && canJump)
         {
@@ -36,7 +52,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, 150));
         }
 
-        vel = new Vector2(horizontal, rb.velocity.y);
+        vel = new Vector2(horizontal * velocidade, rb.velocity.y);
 
         if (horizontal != 0)
         {
