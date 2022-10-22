@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     Vector2 vel;
 
     public Transform floorCollider;
+    public Transform skin;
     public LayerMask floorLayer;
 
     // Start is called before the first frame update
@@ -20,15 +21,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var animator = skin.GetComponent<Animator>();
+        var horizontal = Input.GetAxisRaw("Horizontal");
 
         bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
         if (Input.GetButtonDown("Jump") && canJump)
         {
+            animator.Play("PlayerJump");
             rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, 150));
         }
-        vel = new Vector2(Input.GetAxisRaw("Horizontal"), rb.velocity.y);
 
+        vel = new Vector2(horizontal, rb.velocity.y);
+
+        if (horizontal != 0)
+            animator.SetBool("PlayerRun", true);
+        else
+            animator.SetBool("PlayerRun", false);
+        
     }
 
     private void FixedUpdate()

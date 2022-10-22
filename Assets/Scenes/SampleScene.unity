@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorCollider: {fileID: 598338206}
+  skin: {fileID: 64383933}
   floorLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
