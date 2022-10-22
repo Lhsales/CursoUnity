@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     Vector2 vel;
     float velocidade = 2;
 
+    int numeroCombo;
+    float tempoCombo;
+
     public Transform floorCollider;
     public Transform skin;
     public LayerMask floorLayer;
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, 150));
         }
 
-        vel = new Vector2(horizontal * velocidade, rb.velocity.y);
+        vel = new Vector2(horizontal, rb.velocity.y);
 
         if (horizontal != 0)
         {
