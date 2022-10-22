@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 vel;
-    float velocidade = 5;
+
+    public Transform floorCollider;
+    public LayerMask floorLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +20,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float Horizontal = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(Horizontal, rb.velocity.y);
+        bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
+        if (Input.GetButtonDown("Jump") && canJump)
+        {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(new Vector2(0, 150));
+        }
+        vel = new Vector2(Input.GetAxisRaw("Horizontal"), rb.velocity.y);
+
     }
 
     private void FixedUpdate()
     {
-        
+        rb.velocity = vel;
     }
 }
