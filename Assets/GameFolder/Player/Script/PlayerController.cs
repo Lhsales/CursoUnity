@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]private TrailRenderer tr;
     Rigidbody2D rb;
     Vector2 vel;
     float velocidade = 2;
@@ -11,9 +12,17 @@ public class PlayerController : MonoBehaviour
     int comboNumber;
     public float comboTime;
 
+
     public Transform floorCollider;
     public Transform skin;
     public LayerMask floorLayer;
+
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 3f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +38,26 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxisRaw("Horizontal");
         var character = GetComponent<Character>();
 
+        if (isDashing)
+            return;
+
+        #region Vida 
         if (character.life <= 0)
             this.enabled = false;
 
+        #endregion
+
+        #region Dash
+
+        if (Input.GetButtonDown("Fire2") && canDash)
+        {
+            animator.Play("PlayerDash");
+            StartCoroutine(Dash());
+        }
+
+        #endregion
+
+        #region Ataque
         comboTime = comboTime + Time.deltaTime;
 
         if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
@@ -47,7 +73,9 @@ public class PlayerController : MonoBehaviour
         if (comboTime >= 1)
             comboNumber = 0;
 
+        #endregion
 
+        #region Pulo
         bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
         if (Input.GetButtonDown("Jump") && canJump)
         {
@@ -55,6 +83,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, 150));
         }
+
+        #endregion
+
+        #region Movimentação
 
         vel = new Vector2(horizontal * velocidade, rb.velocity.y);
 
@@ -65,11 +97,32 @@ public class PlayerController : MonoBehaviour
         }
         else
             animator.SetBool("PlayerRun", false);
-        
+        #endregion
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+            return;
+
         rb.velocity = vel;
+    }
+
+    private IEnumerator Dash()
+    {
+
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(skin.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
