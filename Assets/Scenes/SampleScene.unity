@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 1696597804}
   - component: {fileID: 1696597806}
   - component: {fileID: 1696597807}
+  - component: {fileID: 1696597808}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -569,8 +570,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5954f8f6a342e234280db20b9774bb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboTime: 0
   floorCollider: {fileID: 598338206}
   skin: {fileID: 64383933}
   floorLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &1696597808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696597803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfcd213c18bfae4abc55b4fcc4f10ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 5
+  skin: {fileID: 64383933}
