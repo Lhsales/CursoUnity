@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Vector2 vel;
     float velocidade = 2;
 
-    int comboNumber;
+    public int comboNumber;
     public float comboTime;
 
 
