@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     Vector2 vel;
     float velocidade = 2;
 
-    int numeroCombo;
-    public float tempoCombo;
+    int comboNumber;
+    public float comboTime;
 
     public Transform floorCollider;
     public Transform skin;
@@ -27,21 +27,25 @@ public class PlayerController : MonoBehaviour
     {
         var animator = skin.GetComponent<Animator>();
         var horizontal = Input.GetAxisRaw("Horizontal");
+        var character = GetComponent<Character>();
 
-        tempoCombo = tempoCombo + Time.deltaTime;
+        if (character.life <= 0)
+            this.enabled = false;
 
-        if (Input.GetButtonDown("Fire1") && tempoCombo > 0.5f)
+        comboTime = comboTime + Time.deltaTime;
+
+        if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
         {
-            numeroCombo++;
-            if (numeroCombo > 2)
-                numeroCombo = 1;
+            comboNumber++;
+            if (comboNumber > 2)
+                comboNumber = 1;
 
-            tempoCombo = 0;
-            animator.Play("PlayerAttack" + numeroCombo, -1);
+            comboTime = 0;
+            animator.Play("PlayerAttack" + comboNumber, -1);
 
         }
-        if (tempoCombo >= 1)
-            numeroCombo = 0;
+        if (comboTime >= 1)
+            comboNumber = 0;
 
 
         bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
