@@ -5,8 +5,10 @@ using UnityEngine;
 public class BatController : MonoBehaviour
 {
     public Transform player;
-
+    public Transform skin;
     public float attackTime;
+
+    float velocidade = 0.8f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,27 @@ public class BatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var horizontal = Input.GetAxisRaw("Horizontal");
+
+        #region Morte
+        if (GetComponent<Character>().life <= 0)
+        {
+
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+
+            this.enabled = false;
+        }
+        #endregion
+
+        #region Movimentação e Dano
+
         if (Vector2.Distance(transform.position, player.position) > 0.2f)
         {
             attackTime = 0;
-            transform.position = Vector2.MoveTowards(transform.position, player.position, 0.8f * Time.deltaTime);
-            
+            transform.position = Vector2.MoveTowards(transform.position, player.position, velocidade * Time.deltaTime);
+            if (horizontal != 0)
+                skin.localScale = new Vector3(horizontal, 1, 1);
         }
         else
         {
@@ -33,5 +51,6 @@ public class BatController : MonoBehaviour
             }
         }
 
+        #endregion
     }
 }
