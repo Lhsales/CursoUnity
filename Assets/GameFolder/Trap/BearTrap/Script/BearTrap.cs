@@ -29,12 +29,14 @@ public class BearTrap : MonoBehaviour
             skin.GetComponent<Animator>().Play("Stuck", -1);
 
             player = collision.transform;
+            player.GetComponent<PlayerController>().GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             playerSkin = player.GetComponent<PlayerController>().skin;
             playerSkin.GetComponent<Animator>().SetBool("PlayerRun", false);
             playerSkin.GetComponent<Animator>().Play("PlayerIdle", -1);
 
+
             collision.GetComponent<PlayerController>().enabled = false;
-            Invoke("ReleasePlayer", 1);
+            Invoke("ReleasePlayer", 2);
         }
     }
 
