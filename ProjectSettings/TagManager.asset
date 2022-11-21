@@ -43,6 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: TilemapFront
+  - name: Background
     uniqueID: 904900531
+    locked: 0
+  - name: Center
+    uniqueID: 1678343701
+    locked: 0
+  - name: Front
+    uniqueID: 3446455487
     locked: 0
