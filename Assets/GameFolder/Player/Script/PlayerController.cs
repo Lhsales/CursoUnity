@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private TrailRenderer tr;
     Rigidbody2D rb;
     Vector2 vel;
-    float velocidade = 2;
+    float velocidade = 7f;
+    float pulo = 950;
 
     public int comboNumber;
     public float comboTime;
@@ -19,9 +20,11 @@ public class PlayerController : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 3f;
+    private float dashingPower = 10f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+
+    public bool canJump;
 
 
     // Start is called before the first frame update
@@ -76,12 +79,12 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Pulo
-        bool canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
-        if (Input.GetButtonDown("Jump") && canJump)
+        canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
+        if (Input.GetButtonDown("Jump") && canJump && comboTime > 0.5f)
         {
             animator.Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0, 150));
+            rb.AddForce(new Vector2(0, pulo));
         }
 
         #endregion
