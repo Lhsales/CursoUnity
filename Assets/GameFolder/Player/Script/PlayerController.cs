@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 vel;
     float velocidade = 7f;
-    float pulo = 950;
+    float pulo = 1000;
 
     public int comboNumber;
     public float comboTime;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 10f;
+    private float dashingPower = 14f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
