@@ -452,6 +452,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BauDourado_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5598e59a47083264485d1135c711b7dc
+      internalID: -1412339747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -471,6 +492,7 @@ TextureImporter:
       Tocha_4: 521498598
       Bandeira_1: -425795383
       Quadro: 230232936
+      BauDourado_1: -1412339747
       Decoration_0: 1144662438
       Decoration_1: 1024039022
       Bandeira_2: -1851112903
