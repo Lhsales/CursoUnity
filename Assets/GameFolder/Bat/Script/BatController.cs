@@ -8,7 +8,7 @@ public class BatController : MonoBehaviour
     public Transform skin;
     public float attackTime;
 
-    float velocidade = 0.8f;
+    float velocidade = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +34,10 @@ public class BatController : MonoBehaviour
 
         #region Movimentação e Dano
 
-        if (Vector2.Distance(transform.position, player.position) > 0.2f)
+        if (Vector2.Distance(transform.position, player.GetComponent<CapsuleCollider2D>().bounds.center) > 0.9f)
         {
             attackTime = 0;
-            transform.position = Vector2.MoveTowards(transform.position, player.position, velocidade * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.GetComponent<CapsuleCollider2D>().bounds.center, velocidade * Time.deltaTime);
             if (horizontal != 0)
                 skin.localScale = new Vector3(horizontal, 1, 1);
         }
