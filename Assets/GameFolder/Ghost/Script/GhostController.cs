@@ -10,7 +10,7 @@ public class GhostController : MonoBehaviour
 
     public bool goRight;
 
-    private float velocidade = 0.5f;
+    private float velocidade = 10f;
     // Start is called before the first frame update
     void Start()
     {
