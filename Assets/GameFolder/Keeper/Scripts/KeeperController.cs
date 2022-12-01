@@ -11,7 +11,7 @@ public class KeeperController : MonoBehaviour
 
     public bool goRight;
 
-    private float velocidade = 0.2f;
+    private float velocidade = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
