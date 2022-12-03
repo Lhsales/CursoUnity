@@ -21,4 +21,10 @@ public class Character : MonoBehaviour
             skin.GetComponent<Animator>().Play("Die", -1);
         }
     }
+
+    public void PlayerDamage(int value)
+    {
+        life -= value;
+        skin.GetComponent<Animator>().Play("PlayerDamage", 1);
+    }
 }

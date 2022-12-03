@@ -47,6 +47,6 @@ public class GhostController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            collision.GetComponent<Character>().life--;
+            collision.GetComponent<Character>().PlayerDamage(1);
     }
 }
