@@ -6,6 +6,8 @@ public class FireTrap : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
 
+    Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,11 @@ public class FireTrap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            player = collision.transform;
+
             rbPlayer = collision.transform.GetComponent<Rigidbody2D>();
 
-            collision.transform.GetComponent<Character>().life--;
+            player.GetComponent<Character>().PlayerDamage(1);
         }
     }
 }
