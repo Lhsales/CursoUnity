@@ -36,6 +36,7 @@ public class BearTrap : MonoBehaviour
 
 
             collision.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<Character>().PlayerDamage(1);
             Invoke("ReleasePlayer", 2);
         }
     }
