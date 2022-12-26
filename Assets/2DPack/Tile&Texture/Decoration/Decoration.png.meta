@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decoration_1
+      name: TeiaLateral
       rect:
         serializedVersion: 2
         x: 208
@@ -461,7 +461,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -469,6 +469,153 @@ TextureImporter:
       bones: []
       spriteID: 5598e59a47083264485d1135c711b7dc
       internalID: -1412339747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorrenteClara
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 48
+        width: 3
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc45f8af140a48346be7eb7484ab22c4
+      internalID: -652556088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorrenteEscura
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 48
+        width: 3
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af67afce00424f48a6e03717349f514
+      internalID: 1958205099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstanteEscura_1
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fa76affc8a9c34fa01ff7053de4eda
+      internalID: 1077820654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TochaGrande_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b85846fa8b9b040a229f93176132ad
+      internalID: -1872298630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TochaGrande_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bb9c5ee526ff241b043a5a31d26029
+      internalID: 737675245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TochaGrande_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3059737e736099d4281203726c11c40e
+      internalID: 1289666924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TochaGrande_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6fd63f2eb585844a43c21417e877bc
+      internalID: -132191191
       vertices: []
       indices: 
       edges: []
@@ -485,21 +632,28 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       EstanteClara_2: 1822488470
+      CorrenteClara: -652556088
+      TochaGrande_1: -1872298630
       Espadas: -1186024475
       Candelabro_2: -1915657041
+      CorrenteEscura: 1958205099
+      TochaGrande_4: -132191191
       Janela_1: 232040606
       Tocha_2: 1108819676
       Tocha_4: 521498598
       Bandeira_1: -425795383
       Quadro: 230232936
+      EstanteEscura_1: 1077820654
+      TeiaLateral: 1024039022
+      TochaGrande_3: 1289666924
       BauDourado_1: -1412339747
       Decoration_0: 1144662438
-      Decoration_1: 1024039022
       Bandeira_2: -1851112903
       Tocha_1: -74363777
       Tocha_3: -1146901189
       Candelabro_1: 869606454
       EstanteClara_1: 257795222
+      TochaGrande_2: 737675245
       Coluna: -1955559232
   spritePackingTag: 
   pSDRemoveMatte: 0
