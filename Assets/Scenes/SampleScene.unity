@@ -2475,6 +2475,7 @@ GameObject:
   - component: {fileID: 1063351078}
   - component: {fileID: 1063351080}
   - component: {fileID: 1063351079}
+  - component: {fileID: 1063351081}
   m_Layer: 5
   m_Name: HeartIcon
   m_TagString: Untagged
@@ -2540,6 +2541,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063351077}
   m_CullTransparentMesh: 1
+--- !u!95 &1063351081
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063351077}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4e11c3a7cb05d6448043344b7d5e567, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1083235322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,6 +3432,7 @@ GameObject:
   - component: {fileID: 1448966934}
   - component: {fileID: 1448966933}
   - component: {fileID: 1448966932}
+  - component: {fileID: 1448966936}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3502,6 +3524,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1448966936
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448966931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2706be4d20ab584abfc5ba376185ed2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1452120297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3745692101772496221, guid: db59fc355d95e7342a999574e9b826c8, type: 3}
