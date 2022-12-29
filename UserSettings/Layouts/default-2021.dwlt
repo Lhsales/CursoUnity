@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 2154
+  controlID: 8408
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 2155
+  controlID: 8483
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 333
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -337,7 +337,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -350,18 +350,18 @@ MonoBehaviour:
       y: 21
       width: 1022
       height: 360
-    m_Scale: {x: 1.4190568, y: 1.4190568}
-    m_Translation: {x: 511, y: 186.24991}
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 511, y: 180}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -360.09836
-      y: -131.24908
-      width: 720.1967
-      height: 253.68964
+      x: -511
+      y: -180
+      width: 1022
+      height: 360
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1022, y: 381}
@@ -617,9 +617,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 12.870169, y: 17.431292, z: -0.1903436}
+    m_Target: {x: 47.150772, y: 4.8866835, z: -0.53946793}
     speed: 2
-    m_Value: {x: 12.870169, y: 17.431292, z: -0.1903436}
+    m_Value: {x: 47.628807, y: 5.4527764, z: -0.53176266}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -670,9 +670,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.7370946
+    m_Target: 17.893066
     speed: 2
-    m_Value: 1.7370946
+    m_Value: 17.122551
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -727,8 +727,8 @@ MonoBehaviour:
     m_SaveData: []
   m_ShowAlpha: 0
   m_MipLevel: 0
-  m_Zoom: 8.075541
-  m_ScrollPosition: {x: -1919.1887, y: -372.32474}
+  m_Zoom: -1
+  m_ScrollPosition: {x: 0, y: 0}
   m_SelectedObject: {fileID: 0}
   m_SelectedSpriteRectGUID: 00000000000000000000000000000000
   m_LastUsedModuleTypeName: 
@@ -765,7 +765,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a4e6ffff1ef6ffff2cfbffff
+      m_ExpandedIDs: f6f8ffffd4f9ffffe8faffff2cfbffff10600000546000007660000098600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -830,22 +830,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GameFolder/PowerUp/PowerUp
+    - Assets/2DPack/Tile&Texture/Effect
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/GameFolder/PowerUp/PowerUp
+  - Assets/2DPack/Tile&Texture/Effect
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Projetos\CursoUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00660000
-    m_LastClickedID: 26112
-    m_ExpandedIDs: 00000000a4650000a6650000a8650000b2650000fa65000000ca9a3b
+    m_SelectedIDs: ea650000
+    m_LastClickedID: 26090
+    m_ExpandedIDs: 00000000c0650000c2650000c4650000c6650000f865000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -873,7 +873,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a4650000a6650000a8650000b2650000fa65000000ca9a3b
+    m_ExpandedIDs: 00000000c0650000c2650000c4650000c6650000f865000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: d660000062610000ae61000042620000ca620000186300006c620000c8600000146100009e610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
