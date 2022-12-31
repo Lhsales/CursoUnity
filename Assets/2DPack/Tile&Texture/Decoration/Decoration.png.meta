@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Decoration_0
+      name: PortaGrande
       rect:
         serializedVersion: 2
         x: 320
@@ -650,7 +650,7 @@ TextureImporter:
         width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -671,7 +671,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -679,6 +679,27 @@ TextureImporter:
       bones: []
       spriteID: bc0379b95aa56cd4eb032489ce74d3f4
       internalID: -848449856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PortaPequena
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 112
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8986c2b3252f5f4f848d21356476e61
+      internalID: 1781127907
       vertices: []
       indices: 
       edges: []
@@ -698,6 +719,7 @@ TextureImporter:
       CorrenteClara: -652556088
       TochaGrande_1: -1872298630
       Barril: -1661007560
+      PortaPequena: 1781127907
       Espadas: -1186024475
       Caixote: -848449856
       Candelabro_2: -1915657041
@@ -708,18 +730,18 @@ TextureImporter:
       Tocha_2: 1108819676
       Tocha_4: 521498598
       Bandeira_1: -425795383
+      PortaGrande: 33825479
       Quadro: 230232936
       EstanteEscura_1: 1077820654
       TeiaLateral: 1024039022
       TochaGrande_3: 1289666924
       BauDourado_1: -1412339747
-      Decoration_0: 1144662438
-      Bandeira_2: -1851112903
       Tocha_1: -74363777
-      Tocha_3: -1146901189
+      Bandeira_2: -1851112903
       Candelabro_1: 869606454
-      EstanteClara_1: 257795222
+      Tocha_3: -1146901189
       TochaGrande_2: 737675245
+      EstanteClara_1: 257795222
       Coluna: -1955559232
   spritePackingTag: 
   pSDRemoveMatte: 0
