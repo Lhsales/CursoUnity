@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,12 +26,16 @@ public class PlayerController : MonoBehaviour
 
     public bool canJump;
 
+    public string currentLevel;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         vel = new Vector2(5, 0);
+
+        DontDestroyOnLoad(transform.gameObject);
+        currentLevel = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -99,6 +104,16 @@ public class PlayerController : MonoBehaviour
         }
         else
             animator.SetBool("PlayerRun", false);
+        #endregion
+
+        #region Controle de Cena
+
+        if (!currentLevel.Equals(SceneManager.GetActiveScene().name)) 
+        {
+            currentLevel = SceneManager.GetActiveScene().name;
+            transform.position = GameObject.Find("Spawn").transform.position;
+        }
+
         #endregion
     }
 
