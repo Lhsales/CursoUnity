@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FloorCollider : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip groundedSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,9 @@ public class FloorCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("Floor"))
+        {
+            audioSource.PlayOneShot(groundedSound, 0.3f);
+        }
     }
 }
