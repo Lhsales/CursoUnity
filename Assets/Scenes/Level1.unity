@@ -3619,10 +3619,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1919582874}
     m_Modifications:
-    - target: {fileID: 700153649237205364, guid: 99c9ec7fc07f897488944508e8a22c75, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 8793786919186484190, guid: 99c9ec7fc07f897488944508e8a22c75, type: 3}
       propertyPath: m_Name
       value: Keeper1
