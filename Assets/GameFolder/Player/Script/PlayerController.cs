@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +18,13 @@ public class PlayerController : MonoBehaviour
     public Transform floorCollider;
     public Transform skin;
     public LayerMask floorLayer;
+    public AudioClip attack1Sound;
+    public AudioClip attack2Sound;
+    public AudioClip damageSound;
+    public AudioClip dashSound;
 
+
+    public AudioSource audioSource;
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 14f;
@@ -36,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
         DontDestroyOnLoad(transform.gameObject);
         currentLevel = SceneManager.GetActiveScene().name;
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -58,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2") && canDash)
         {
+            audioSource.PlayOneShot(dashSound, 0.5f);
             animator.Play("PlayerDash");
             StartCoroutine(Dash());
         }
@@ -69,6 +80,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
         {
+            if (comboNumber == 1)
+                audioSource.PlayOneShot(attack1Sound);
+            else
+                audioSource.PlayOneShot(attack2Sound);
+
             comboNumber++;
             if (comboNumber > 2)
                 comboNumber = 1;
