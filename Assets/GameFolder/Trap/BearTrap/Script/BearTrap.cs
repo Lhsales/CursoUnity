@@ -9,6 +9,9 @@ public class BearTrap : MonoBehaviour
     Transform player;
     Transform playerSkin;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,8 @@ public class BearTrap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            audioSource.PlayOneShot(audioClip);
+
             GetComponent<BoxCollider2D>().enabled = false;
             skin.GetComponent<Animator>().Play("Stuck", -1);
 
