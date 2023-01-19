@@ -58235,6 +58235,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 68c90487d8649104bbcb9324c2767015, type: 3}
     - target: {fileID: 8790986852689265531, guid: b6f68af44ffc17543b22aa8ff6698e5f, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 2054698097}
+    - target: {fileID: 8790986852689265531, guid: b6f68af44ffc17543b22aa8ff6698e5f, type: 3}
       propertyPath: groundedSound
       value: 
       objectReference: {fileID: 8300000, guid: c93b168bc3a5b6747bee1980e4b4ef5a, type: 3}
