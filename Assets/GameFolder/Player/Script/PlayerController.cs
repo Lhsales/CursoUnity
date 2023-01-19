@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip attack2Sound;
     public AudioClip damageSound;
     public AudioClip dashSound;
+    public Transform gameOverPanel;
 
 
     public AudioSource audioSource;
@@ -60,8 +61,11 @@ public class PlayerController : MonoBehaviour
 
         #region Vida 
         if (character.life <= 0)
+        {
+            gameOverPanel.GetComponent<GameOver>().enabled = true;
+            
             this.enabled = false;
-
+        }
         #endregion
 
         #region Dash
@@ -155,5 +159,10 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+
+    public void DestroyPlayer()
+    {
+        Destroy(transform.gameObject);
     }
 }
