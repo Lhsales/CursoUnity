@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip damageSound;
     public AudioClip dashSound;
     public Transform gameOverPanel;
+    public Transform pausePanel;
 
 
     public AudioSource audioSource;
@@ -56,8 +58,19 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxisRaw("Horizontal");
         var character = GetComponent<Character>();
 
+
+        #region Menu
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            pausePanel.GetComponent<Pause>().enabled = !pausePanel.GetComponent<Pause>().enabled;
+        }
+
+        #endregion
+
         if (isDashing)
             return;
+
 
         #region Vida 
         if (character.life <= 0)
@@ -68,73 +81,77 @@ public class PlayerController : MonoBehaviour
         }
         #endregion
 
-        #region Dash
-
-        if (Input.GetButtonDown("Fire2") && canDash)
+        if (!pausePanel.GetComponent<Pause>().enabled)
         {
-            audioSource.PlayOneShot(dashSound, 0.5f);
-            animator.Play("PlayerDash");
-            StartCoroutine(Dash());
-        }
+            #region Dash
 
-        #endregion
+            if (Input.GetButtonDown("Fire2") && canDash)
+            {
+                audioSource.PlayOneShot(dashSound, 0.5f);
+                animator.Play("PlayerDash");
+                StartCoroutine(Dash());
+            }
 
-        #region Ataque
-        comboTime = comboTime + Time.deltaTime;
+            #endregion
 
-        if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
-        {
-            if (comboNumber == 1)
-                audioSource.PlayOneShot(attack1Sound);
+            #region Ataque
+            comboTime = comboTime + Time.deltaTime;
+
+            if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
+            {
+                if (comboNumber == 1)
+                    audioSource.PlayOneShot(attack1Sound);
+                else
+                    audioSource.PlayOneShot(attack2Sound);
+
+                comboNumber++;
+                if (comboNumber > 2)
+                    comboNumber = 1;
+
+                comboTime = 0;
+                animator.Play("PlayerAttack" + comboNumber, -1);
+
+            }
+            if (comboTime >= 1)
+                comboNumber = 0;
+
+            #endregion
+
+            #region Pulo
+            canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
+            if (Input.GetButtonDown("Jump") && canJump && comboTime > 0.5f)
+            {
+                animator.Play("PlayerJump", -1);
+                rb.velocity = Vector2.zero;
+                rb.AddForce(new Vector2(0, pulo));
+            }
+
+            #endregion
+
+            #region Movimentação
+
+            vel = new Vector2(horizontal * velocidade, rb.velocity.y);
+
+            if (horizontal != 0)
+            {
+                skin.localScale = new Vector3(horizontal, 1, 1);
+                animator.SetBool("PlayerRun", true);
+            }
             else
-                audioSource.PlayOneShot(attack2Sound);
+                animator.SetBool("PlayerRun", false);
 
-            comboNumber++;
-            if (comboNumber > 2)
-                comboNumber = 1;
+            #endregion
 
-            comboTime = 0;
-            animator.Play("PlayerAttack" + comboNumber, -1);
+            #region Controle de Cena
 
+            if (!currentLevel.Equals(SceneManager.GetActiveScene().name))
+            {
+                currentLevel = SceneManager.GetActiveScene().name;
+                transform.position = GameObject.Find("Spawn").transform.position;
+            }
+
+            #endregion
         }
-        if (comboTime >= 1)
-            comboNumber = 0;
-
-        #endregion
-
-        #region Pulo
-        canJump = Physics2D.OverlapCircle(floorCollider.position, 0.1f, floorLayer);
-        if (Input.GetButtonDown("Jump") && canJump && comboTime > 0.5f)
-        {
-            animator.Play("PlayerJump", -1);
-            rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0, pulo));
-        }
-
-        #endregion
-
-        #region Movimentação
-
-        vel = new Vector2(horizontal * velocidade, rb.velocity.y);
-
-        if (horizontal != 0)
-        {
-            skin.localScale = new Vector3(horizontal, 1, 1);
-            animator.SetBool("PlayerRun", true);
-        }
-        else
-            animator.SetBool("PlayerRun", false);
-        #endregion
-
-        #region Controle de Cena
-
-        if (!currentLevel.Equals(SceneManager.GetActiveScene().name)) 
-        {
-            currentLevel = SceneManager.GetActiveScene().name;
-            transform.position = GameObject.Find("Spawn").transform.position;
-        }
-
-        #endregion
     }
 
     private void FixedUpdate()
